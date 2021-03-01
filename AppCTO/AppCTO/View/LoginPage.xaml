@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCTO.View.LoginPage"
+             >
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" Padding="20"
+              VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" RowSpacing="10">
+
+            <Label Text="{Binding Title}" Grid.Row="0" 
+                   HorizontalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="Title"
+                   TextColor="SaddleBrown"
+                   />
+
+            <Image Source="cto.png" Aspect="AspectFit" Grid.Row="1"></Image>
+
+            <Entry Placeholder="Ingrese su Usuario" Grid.Row="2"
+                   PlaceholderColor="SandyBrown"
+                   TextColor="SaddleBrown"
+                   Text="{Binding User}"
+                   />
+
+            <Entry Placeholder="Ingrese su Contraseña" Grid.Row="3"
+                   IsPassword="True"
+                   PlaceholderColor="SandyBrown"
+                   TextColor="SaddleBrown"
+
+                   />
+
+            <Button Text="INGRESAR" Grid.Row="4"
+                    BackgroundColor="SaddleBrown"
+                    TextColor="white"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    Command="{Binding Ingreso}"
+                    />
+
+            <ActivityIndicator Grid.Row="5" Color="SandyBrown" IsRunning="{Binding IsBussy}"/>
+
+        </Grid>       
+        
+    </ContentPage.Content>
+</ContentPage>
